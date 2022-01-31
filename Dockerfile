@@ -1,6 +1,7 @@
-FROM python:3.6
+FROM python:3.10-slim
 
-RUN pip install jinja2
+ADD requirements.txt /requirements.txt
+RUN pip install -r requirements.txt
 ADD run.py /run.py
 
 USER 1001

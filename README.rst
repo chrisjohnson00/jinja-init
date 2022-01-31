@@ -178,3 +178,12 @@ Contributing
 
 We welcome new ideas and contributions. You can use issues and pull requests to
 help us improve this tool.
+
+PyPi Dependencies
+============
+
+    pip install --upgrade pip
+    pip install --upgrade Jinja2
+    pip freeze > requirements.txt
+    sed -i '/pkg_resources/d' requirements.txt
+
