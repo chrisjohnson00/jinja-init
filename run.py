@@ -17,7 +17,7 @@
 
 import glob
 import os
-
+import datetime
 import jinja2
 
 
@@ -58,6 +58,7 @@ class Runner(object):
         with open(self.src_file) as fd:
             template_data = fd.read()
         template = jinja2.Template(template_data)
+        template.globals['now'] = datetime.datetime.utcnow
         with open(self.dest_file, 'w') as fd:
             fd.write(template.render(**j_env))
         self.v_print('Template rendered. Done')
